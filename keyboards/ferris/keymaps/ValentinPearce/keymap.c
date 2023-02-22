@@ -12,7 +12,8 @@ enum ferris_layers {
   _COLEMAK_DH,
   _NUMPAD,
   _NAV,
-  _SYMBOL
+  _SYMBOL,
+  _FUN
 };
 
 enum ferris_tap_dances {
@@ -29,7 +30,7 @@ enum ferris_tap_dances {
 #define KC_SPM1 LT(1, KC_SPC)
 #define KC_TBM2 LT(2, KC_TAB)
 #define KC_ENM3 LT(3, KC_ENT)
-
+#define KC_BSM4 LT(4, KC_BSPC)
 // Home row mods
 #define MT_SUA  MT(MOD_LGUI, CA_A)
 #define MT_ALR  MT(MOD_LALT, CA_R)
@@ -50,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 TD_Q_ESC,    CA_W,    CA_F,    CA_P,    CA_B,            CA_J,    CA_L,     CA_U,    CA_Y, CA_SCLN,
   MT_SUA,  MT_ALR,  MT_SHS,  MT_CTT,  MT_HPG,          MT_HPM,  MT_CTN,   MT_SHE,  MT_ALI,  MT_SUO,
     CA_Z,    CA_X,    CA_C,    CA_D,    CA_V,            CA_K,    CA_H,  CA_COMM,  CA_DOT, CA_SLSH,
-                                     KC_TBM2, KC_SPM1, KC_ENM3, KC_BSPC
+                                     KC_TBM2, KC_SPM1, KC_ENM3, KC_BSM4
   ),
 
   [_NUMPAD] = LAYOUT( /* [> NUMPAD <] */
@@ -61,9 +62,9 @@ TD_Q_ESC,    CA_W,    CA_F,    CA_P,    CA_B,            CA_J,    CA_L,     CA_U
   ),
 
   [_NAV] = LAYOUT( /* [> NAV <] */
-    KC_ESC   ,KC_F7 ,KC_F8  ,KC_F9  ,KC_F12,    __NONE__,KC_HOME ,KC_UP   ,KC_END  ,KC_PGUP,
-    __NONE__ ,KC_F4 ,KC_F5  ,KC_F6  ,KC_F11,    __NONE__,KC_LEFT ,KC_DOWN ,KC_RGHT ,KC_PGDN,
-    __NONE__ ,KC_F1 ,KC_F2  ,KC_F3  ,KC_F10,    CA_CCED ,CA_EACU ,CA_EGRV ,CA_AGRV ,CA_UGRV,
+    KC_ESC  ,KC_TRNS ,KC_TRNS  ,KC_TRNS  ,KC_TRNS,    __NONE__,KC_HOME ,KC_UP   ,KC_END  ,KC_PGUP,
+    KC_TRNS ,KC_TRNS ,KC_TRNS  ,KC_TRNS  ,KC_TRNS,    __NONE__,KC_LEFT ,KC_DOWN ,KC_RGHT ,KC_PGDN,
+    KC_TRNS ,KC_TRNS ,KC_TRNS  ,KC_TRNS  ,KC_TRNS,    CA_CCED ,CA_EACU ,CA_EGRV ,CA_AGRV ,CA_UGRV,
                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
@@ -72,6 +73,13 @@ TD_Q_ESC,    CA_W,    CA_F,    CA_P,    CA_B,            CA_J,    CA_L,     CA_U
       CA_SLSH ,CA_ASTR ,CA_MINS ,CA_PLUS ,CA_BSLS ,    __NONE__,CA_LPRN ,CA_RPRN ,KC_LT   ,KC_GT   ,
       CA_PIPE ,CA_AMPR ,CA_EXLM ,CA_EQL  ,CA_LABK ,    CA_RABK ,CA_LBRC ,CA_RBRC ,CA_TILD ,CA_GRV  ,
                                     KC_TRNS, CA_UNDS, KC_TRNS, KC_TRNS
+  ),
+
+  [_FUN] = LAYOUT( /* [> NAV <] */
+    KC_ESC   ,KC_F7 ,KC_F8  ,KC_F9  ,KC_F12,    KC_TRNS,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS,
+    __NONE__ ,KC_F4 ,KC_F5  ,KC_F6  ,KC_F11,    KC_TRNS,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS,
+    __NONE__ ,KC_F1 ,KC_F2  ,KC_F3  ,KC_F10,    KC_TRNS,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS,
+                                    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   )
 };
 
