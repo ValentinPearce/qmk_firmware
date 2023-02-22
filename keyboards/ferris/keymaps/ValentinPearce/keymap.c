@@ -10,10 +10,11 @@
 
 enum ferris_layers {
   _COLEMAK_DH,
-  _NUMPAD,
+  _NUM,
   _NAV,
   _SYMBOL,
-  _FUN
+  _FUN,
+  _NUMPAD
 };
 
 enum ferris_tap_dances {
@@ -42,7 +43,8 @@ enum ferris_tap_dances {
 #define MT_SHE  MT(MOD_LSFT, CA_E)
 #define MT_CTN  MT(MOD_LCTL, CA_N)
 #define MT_HPM  MT(MOD_HYPR, CA_M)
-
+// Extra commands
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 // Cosmetics
 #define __NONE__ KC_NO   // Alias to make it eight wide
 
@@ -54,11 +56,11 @@ TD_Q_ESC,    CA_W,    CA_F,    CA_P,    CA_B,            CA_J,    CA_L,     CA_U
                                      KC_TBM2, KC_SPM1, KC_ENM3, KC_BSM4
   ),
 
-  [_NUMPAD] = LAYOUT( /* [> NUMPAD <] */
-    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-    QK_GESC, KC_HOME, KC_PGDN, KC_PGUP, KC_END,          KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_QUOT,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2,         KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_ENT,
-                                    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS  
+  [_NUM] = LAYOUT( /* [> NUMPAD <] */
+    TG(5), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            CA_MINS,    KC_7,  KC_8,  KC_9, CA_ASTR,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            CA_PLUS,    KC_4,  KC_5,  KC_6, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            CA_DOT,     KC_1,  KC_2,  KC_3, KC_ENT,
+                                    KC_TRNS, KC_TRNS, KC_0, KC_TRNS
   ),
 
   [_NAV] = LAYOUT( /* [> NAV <] */
@@ -80,6 +82,12 @@ TD_Q_ESC,    CA_W,    CA_F,    CA_P,    CA_B,            CA_J,    CA_L,     CA_U
     __NONE__ ,KC_F4 ,KC_F5  ,KC_F6  ,KC_F11,    KC_TRNS,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS,
     __NONE__ ,KC_F1 ,KC_F2  ,KC_F3  ,KC_F10,    KC_TRNS,KC_TRNS ,KC_TRNS ,KC_TRNS ,KC_TRNS,
                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+  ),
+  [_NUMPAD] = LAYOUT( /* [> NUMPAD <] */
+    TG(5), KC_TRNS, KC_TRNS, KC_TRNS, KC_NUM,             KC_PMNS,    KC_KP_7,  KC_KP_8,  KC_KP_9, KC_PAST,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            KC_PPLS,    KC_KP_4,  KC_KP_5,  KC_KP_6, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,            KC_PDOT,    KC_KP_1,  KC_KP_2,  KC_KP_3, KC_PENT,
+                                    KC_TRNS, KC_TRNS, KC_KP_0, KC_TRNS
   )
 };
 
