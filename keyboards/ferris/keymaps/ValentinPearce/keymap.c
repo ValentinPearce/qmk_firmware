@@ -50,7 +50,7 @@ enum ferris_tap_dances {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK_DH] = LAYOUT( /* COLEMAK-DH */
-TD_Q_ESC,    CA_W,    CA_F,    CA_P,    CA_B,            CA_J,    CA_L,     CA_U,    CA_Y, CA_SCLN,
+TD(TD_Q_ESC),    CA_W,    CA_F,    CA_P,    CA_B,            CA_J,    CA_L,     CA_U,    CA_Y, CA_SCLN,
   MT_SUA,  MT_ALR,  MT_SHS,  MT_CTT,  MT_HPG,          MT_HPM,  MT_CTN,   MT_SHE,  MT_ALI,  MT_SUO,
     CA_Z,    CA_X,    CA_C,    CA_D,    CA_V,            CA_K,    CA_H,  CA_COMM,  CA_DOT, CA_SLSH,
                                      KC_TBM2, KC_SPM1, KC_ENM3, KC_BSM4
