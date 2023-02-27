@@ -40,7 +40,7 @@ enum ferris_tap_dances {
 #define MT_HPG  MT(MOD_HYPR, CA_G)
 #define MT_SUO  MT(MOD_LGUI, CA_O)
 #define MT_ALI  MT(MOD_LALT, CA_I)
-#define MT_SHE  MT(MOD_LSFT, CA_E)
+#define MT_SHE  MT(MOD_RSFT, CA_E)
 #define MT_CTN  MT(MOD_LCTL, CA_N)
 #define MT_HPM  MT(MOD_HYPR, CA_M)
 // Extra commands
